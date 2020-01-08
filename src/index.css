@@ -1,13 +1,87 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main_container {
+  margin: 5%;
+  display: grid;
+  grid-template-areas:
+    "display display display display"
+    "num7 num8 num9 plus"
+    "num4 num5 num6 minus"
+    "num1 num2 num3 multipl"
+    "equal num0 num0 divide";
+  grid-gap: 3px;
+  grid-template-columns: repeat(4, 50px);
+  grid-template-rows: repeat(5, 40px);
+}
+.btn {
+  background-color: rgb(180, 218, 202);
+}
+.section,
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+}
+.display {
+  grid-area: display;
+  justify-content: flex-end;
+  padding-right: 3px;
+}
+.plusBtn {
+  grid-area: plus;
+}
+.minusBtn {
+  grid-area: minus;
+}
+.multiplicationBtn {
+  grid-area: multipl;
+}
+.divisionBtn {
+  grid-area: divide;
+}
+.equalsBtn {
+  grid-area: equal;
+}
+.num0 {
+  grid-area: num0;
+}
+.num1 {
+  grid-area: num1;
+}
+.num2 {
+  grid-area: num2;
+}
+.num3 {
+  grid-area: num3;
+}
+.num4 {
+  grid-area: num4;
+}
+.num5 {
+  grid-area: num5;
+}
+.num6 {
+  grid-area: num6;
+}
+.num7 {
+  grid-area: num7;
+}
+.num8 {
+  grid-area: num8;
+}
+.num9 {
+  grid-area: num9;
 }
