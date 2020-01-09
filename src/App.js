@@ -51,13 +51,6 @@ function App() {
     });
   };
 
-  const numbers = new Array(10).fill(0);
-  const numDisplay = numbers.map((_, i) => (
-    <div key={i} className={`section num${+i}`} onClick={() => addNumber(i)}>
-      {i}
-    </div>
-  ));
-
   const operationClick = e => {
     setCalculatorState(calculatorState => {
       switch (calculatorState.stage) {
@@ -122,12 +115,20 @@ function App() {
       }
     });
   };
+
+  const numbers = new Array(10).fill(0);
+  const numDisplay = numbers.map((_, i) => (
+    <div key={i} className={`section num${+i}`} onClick={() => addNumber(i)}>
+      {i}
+    </div>
+  ));
+
   const displayValue =
     calculatorState.stage === stages.accFirstVal ||
     calculatorState.stage === stages.accSecondVal
       ? calculatorState.currentNum
       : [calculatorState.storedNum, calculatorState.operation];
-  console.log(calculatorState);
+
   return (
     <div className="main_container">
       <div className="section display">{displayValue}</div>
