@@ -23,14 +23,7 @@ function App() {
         case stages.accSecondVal:
           return {
             ...calculatorState,
-            currentNum: Number(`${calculatorState.currentNum}` + i),
-            storedNum: eval(
-              [
-                calculatorState.storedNum,
-                calculatorState.operation,
-                calculatorState.currentNum
-              ].join("")
-            )
+            currentNum: Number(`${calculatorState.currentNum}` + i)
           };
         case stages.selectOp:
           return {
@@ -128,6 +121,8 @@ function App() {
     calculatorState.stage === stages.accSecondVal
       ? calculatorState.currentNum
       : [calculatorState.storedNum, calculatorState.operation];
+
+  console.log(calculatorState);
 
   return (
     <div className="main_container">
